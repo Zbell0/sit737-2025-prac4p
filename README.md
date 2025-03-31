@@ -1,82 +1,66 @@
+[SIT737 PROJECT OVERVIEW]
 
-# 📊 SIT737 Practical 4 – Calculator Microservices (4.1P & 4.2C)
+This repository contains two independent Node.js-based calculator microservices developed for SIT737 Practical 4:
 
-This repository contains two separate calculator microservice projects developed as part of SIT737 Cloud-Native Application Development practical tasks.
+4.1P: A basic arithmetic calculator  
+4.2C: A modular calculator with separate controllers and logging
 
----
+------------------------------------------------------------
 
-## 📁 Project Structure
+[PROJECT: 4.1P - BASIC CALCULATOR MICROSERVICE]
 
-sit737-2025-prac4p/
-├── 4.1P/
-│   ├── app.js
-│   └── package.json
-│
-├── 4.2C/
-│   ├── app.js
-│   ├── controllers/
-│   │   ├── basicController.js
-│   │   └── advancedController.js
-│   ├── logger.js
-│   ├── logs/
-│   └── package.json
+Description:
+A simple Express-based calculator that supports basic arithmetic operations via RESTful endpoints.
 
----
+How to Run:
+1. Navigate to the 4.1P directory  
+2. Run 'npm install'  
+3. Run 'node app.js'
 
-## 🧮 4.1P – Basic Calculator Microservice
+Available Endpoints:
+GET /add  
+GET /subtract  
+GET /multiply  
+GET /divide
 
-### 📌 Description
-A simple Node.js calculator app exposing basic arithmetic operations using REST endpoints.
+Usage:
+Use query parameters 'num1' and 'num2' for each operation.  
+Example: http://localhost:3000/add?num1=10&num2=5
 
-### ▶️ How to Run
+------------------------------------------------------------
 
-```bash
-cd 4.1P
-npm install
-node app.js
+[PROJECT: 4.2C - MODULAR CALCULATOR MICROSERVICE]
 
-🚀 Endpoints
+Description:
+A structured calculator microservice with separate basic and advanced controllers, and integrated logging using Winston.
 
-Method	Endpoint	Description
-GET	/add	Addition
-GET	/subtract	Subtraction
-GET	/multiply	Multiplication
-GET	/divide	Division
+How to Run:
+1. Navigate to the 4.2C directory  
+2. Run 'npm install'  
+3. Run 'npm run dev'
 
-Use query parameters num1 and num2, e.g.:
+Available Endpoints:
 
-GET http://localhost:3000/add?num1=10&num2=5
+Basic Operations:  
+GET /add  
+GET /subtract  
+GET /multiply  
+GET /divide
 
+Advanced Operations:  
+GET /power  
+GET /sqrt  
+GET /mod
 
+Logging:
+Winston is used for structured logging.  
+logs/combined.log – all logs  
+logs/error.log – error logs only
 
-⸻
+------------------------------------------------------------
 
-🔧 4.2C – Modular Calculator Microservice (Advanced)
+[AUTHOR]
 
-📌 Description
-
-An enhanced version of the calculator app with:
-	•	Separated controllers (basic and advanced)
-	•	Logging using Winston
-	•	Modular and scalable code structure
-
-▶️ How to Run
-
-cd 4.2C
-npm install
-npm run dev
-
-🧪 API Endpoints
-
-Basic Operations
-	•	/add, /subtract, /multiply, /divide
-
-Advanced Operations
-	•	/power – Exponentiation
-	•	/sqrt – Square root
-	•	/mod – Modulo
-
-🗂 Logging (via Winston)
-	•	logs/error.log – error-level logs
-	•	logs/combined.log – all logs
-
+Ella Kim  
+SIT737 – Cloud-Native Application Development  
+Deakin University
